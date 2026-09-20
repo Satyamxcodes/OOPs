@@ -1,0 +1,26 @@
+Tightly coupled class  
+class Engine {  
+    void start() {  
+        System.out.println("Engine started");  
+    }  
+}  
+  
+class Car {  
+    private Engine engine;   // Car is dependent on Engine  
+  
+    Car() {  
+        engine = new Engine();   // Strong coupling  
+    }  
+  
+    void drive() {  
+        engine.start();  
+        System.out.println("Car is moving");  
+    }  
+}  
+  
+public class Main {  
+    public static void main(String[] args) {  
+        Car myCar = new Car();  
+        myCar.drive();  
+    }  
+}  
